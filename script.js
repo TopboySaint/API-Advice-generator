@@ -21,9 +21,15 @@ const getAdvice = async () => {
 };
 
 const saveAdvice = () => {
-  let favoriteAdvice = displayAdvice.querySelector("p").textContent;
-  localStorage.setItem("FavoriteAdvice", (favoriteAdvice));
-  console.log("Advice saved:", favoriteAdvice);
+  let favoriteAdvice = displayAdvice.textContent;
+  
+  
+  if (favoriteAdvice) {
+    localStorage.setItem("FavoriteAdvice", favoriteAdvice); 
+    console.log("Saved Advice: ", "favoriteAdvice"); 
+  } else {
+    console.log("No advice to save!"); 
+  }
 };
 
 const showSaved = () => {
